@@ -1,45 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-        *{
+
+        @import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap');
+
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        body{
+
+        body {
             font-family: 'Noto Sans KR', sans-serif;
         }
-        header{
+
+        header {
             width: 100%;
             box-shadow: 0 0 2px rgb(175, 175, 175);
         }
-        nav{
+
+        nav {
             margin: 0 auto;
             width: 100%;
             height: 80px;
-            max-width: 1200px;
+            max-width: 1100px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            
         }
-        nav > div{
-            padding:24px
+
+        nav>div {
+            padding: 24px
         }
-        .logo{
+
+        .logo {
             height: 100%;
             display: flex;
             align-items: center;
             justify-content: center;
         }
-        .logo p{
+
+        .logo p {
             font-weight: bold;
             color: rgb(245, 188, 0);
             padding: 2px;
@@ -48,142 +59,300 @@
             font-family: 'Bebas Neue', sans-serif;
             cursor: pointer;
         }
-        .logo img{
+
+        .logo img {
             width: 24px;
             margin-top: -5px;
         }
-        header ul{
+
+        header ul {
             list-style: none;
             display: flex;
         }
-        header li{
-            padding:10px;
-            margin: 10px;
+
+        header li {
+            padding: 10px;
+            margin: 8px;
             cursor: pointer;
             font-weight: bold;
             font-size: 20px;
-            color:rgb(61, 61, 61);
+            color: rgb(61, 61, 61);
         }
-        .sign{
+
+        .sign {
             height: 100%;
             display: flex;
             align-items: center;
         }
-        .sign p{
+
+        .sign p {
             padding: 0 14px;
             font-size: 20px;
             color: grey;
             cursor: pointer;
         }
-        header a{
+
+        header a {
             text-decoration: none;
-            padding:5px 8px;
+            padding: 5px 8px;
             color: grey;
             font-size: 17px;
         }
-        .category{
+
+        /*-----------------------카테고리------------------------*/
+        .category {
             width: 100%;
         }
-        .category-items{
-            margin: 40px auto;
+
+        .category-items {
+            margin: 50px auto;
             width: 100%;
-            height: 160px;
-            max-width: 1200px;
+            height: 120px;
+            max-width: 900px;
             display: flex;
             align-items: center;
             justify-content: space-between;
         }
-        .category-item{
+
+        .category-item {
             height: 100%;
             text-align: center;
         }
-        .category-items div img{
+
+        .category-items div img {
             height: 80%;
         }
-        .category-items div p{
+
+        .category-items div p {
             height: 20%;
-            /* font-weight: 600; */
-            color: rgb(46, 46, 46);
-            font-size: 17px;
-            margin-top: -10px;
+            color: rgb(102, 102, 102);
+            margin-top: -4px;
+            font-size: 15px;
+            font-weight: bold;
+            font-family: 'Gowun Dodum', sans-serif;
+
         }
 
+        /*-----------------------컨텐츠---------------------------*/
 
-        @media all and (max-width: 1024px){
-            nav{
-            height: 70px;
-            max-width: 780px;
+        .content {
+            width: 100%;
         }
-        nav > div{
-            padding:20px
+
+        .new-content {
+            width: 100%;
+            max-width: 1100px;
+            margin: 70px auto;            
         }
-        .logo{
-            height: 100%;
+        .content-title{
+            width: 150px;
+            height: 40px;
+            background-color: rgb(255, 243, 190);
             display: flex;
             align-items: center;
             justify-content: center;
+            border-top-left-radius: 16px;
+            border-top-right-radius: 16px;
         }
-        .logo p{
-            font-weight: bold;
-            color: rgb(245, 188, 0);
-            padding: 2px;
-            font-size: 30px;
-            letter-spacing: 0.08em;
-            font-family: 'Bebas Neue', sans-serif;
-            cursor: pointer;
+        .content-title p{
+            padding: 16px;
+            font-size: 17px;
+            font-weight: 500;
+            color: rgb(92, 92, 92);
+            display: inline-block;
         }
-        header li{
-            padding: 8px;
-            margin: 8px;
-            font-size: 16px;
-        }
-        header a{
-            padding:4px;
-            font-size: 15px;
-        }
-        .category-items{
-            margin: 40px auto;
-            width: 100%;
-            height: 120px;
-            max-width: 780px;
-            display: flex;
+        .content-items{
+            display:flex;
             align-items: center;
-            justify-content: space-between;
+            justify-content: space-around;
+            padding:20px;
+            background-color: rgb(248, 248, 248);
+        }
+        .item {
+            width: 244px;
+            height: 380px;
+            background-color: white;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        .item-img{
+            width: 100%;
+            height: 65%;
         }
 
-        
-
-        }
-        @media all and (max-width: 768px){
-            nav{
-            margin: 0 auto;
+        .item-img img{
             width: 100%;
-            height: 65px;
-            max-width: 800px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
+            height: 100%;
+            background-repeat: no-repeat;
+            background-size: cover;
             
         }
+        .item-text{
+            width: 100%;
+            height: 35%;
+            padding:8px;
+        }
+        .item-text p{
+            font-weight: bold;
+            color: rgb(54, 54, 54);
+        }
+        
 
-        .category-items{
-            margin: 30px auto;
-            height: 160px;
-            max-width: 600px;
+
+
+
+
+
+
+        .content2 {
+            width: 100%;
+        }
+
+        .new-content2 {
+            width: 100%;
+            max-width: 1100px;
+            margin: 70px auto;            
+        }
+        .content-title2{
+            width: 150px;
+            height: 40px;
+            display: flex;
             align-items: center;
-            justify-content:center;
-            flex-wrap: wrap;
         }
-        .category-item{
-            height: 100%;
-            width: 180px;
-            text-align: center;
+        .content-title2 p{
+            padding: 5px;
+            font-size: 17px;
+            font-weight: 500;
+            color: rgb(92, 92, 92);
+            display: inline-block;
         }
+        .content-items2{
+            display:flex;
+            align-items: center;
+            justify-content: space-around;
+            padding:20px;
+        }
+        
+
+
+
+
+        @media all and (max-width: 1200px) {
+            nav {
+                max-width: 900px;
+            }
+
+            .logo p {
+                font-weight: bold;
+                color: rgb(245, 188, 0);
+                padding: 2px;
+                font-size: 29px;
+                letter-spacing: 0.08em;
+                font-family: 'Bebas Neue', sans-serif;
+                cursor: pointer;
+            }
+
+            .logo img {
+                width: 18px;
+                margin-top: -5px;
+            }
+
+            header li {
+                padding: 5px;
+                margin: 6px;
+                font-size: 18px;
+            }
+
+            header a {
+                padding: 4px;
+                font-size: 14px;
+            }
+        }
+
+
+        @media all and (max-width: 768px) {
+            nav {
+                height: 70px;
+                max-width: 700px;
+            }
+
+            nav>div {
+                padding: 20px
+            }
+
+            .logo {
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .logo p {
+                font-weight: bold;
+                color: rgb(245, 188, 0);
+                padding: 2px;
+                font-size: 30px;
+                letter-spacing: 0.08em;
+                font-family: 'Bebas Neue', sans-serif;
+                cursor: pointer;
+            }
+
+            header li {
+                padding: 8px;
+                margin: 8px;
+                font-size: 16px;
+            }
+
+            header a {
+                padding: 4px;
+                font-size: 15px;
+            }
+
+            .category-items {
+                margin: 40px auto;
+                width: 100%;
+                height: 120px;
+                max-width: 700px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+
 
         }
 
+        @media all and (max-width: 576px) {
+            nav {
+                margin: 0 auto;
+                width: 100%;
+                height: 65px;
+                max-width: 800px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+            }
+
+            .category-items {
+                margin: 30px auto;
+                height: 160px;
+                max-width: 600px;
+                align-items: center;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .category-item {
+                height: 100%;
+                width: 180px;
+                text-align: center;
+            }
+
+        }
     </style>
 </head>
+
 <body>
     <header>
         <nav>
@@ -210,7 +379,7 @@
         <div class="category-items">
             <div class="category-item stage">
                 <img src="./images/7.png" alt="">
-                <p>방송∙무대 장비</p>
+                <p>방송∙무대</p>
             </div>
             <div class="category-item car">
                 <img src="./images/4.png" alt="">
@@ -232,9 +401,51 @@
                 <img src="./images/12.png" alt="">
                 <p>기타장비</p>
             </div>
-            
+
         </div>
     </div>
-    
+
+    <div class="content">
+        <div class="new-content">
+            <div class="content-title">
+                <p>New Products</p>
+            </div>
+            <div class="content-items">
+                <div class="item">
+                    <div class="item-img">
+                        <img src="./images/fridge.jpg" alt="">
+                    </div>
+                    <div class="item-text">
+                        <p>우리 냉장고</p>
+                    </div>
+                </div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+            </div>
+        </div>
+    </div>
+    <div class="content2">
+        <div class="new-content2">
+            <div class="content-title2">
+                <p>New Products</p>
+            </div>
+            <div class="content-items2">
+                <div class="item">
+                    <div class="item-img">
+                        <img src="./images/fridge.jpg" alt="">
+                    </div>
+                    <div class="item-text">
+                        <p>우리 냉장고</p>
+                    </div>
+                </div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+            </div>
+        </div>
+    </div>
+
 </body>
+
 </html>
