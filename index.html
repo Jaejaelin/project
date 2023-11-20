@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,10 +8,19 @@
         integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
+        /* 메뉴 및 메인폰트 */
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+        /* 임시로고 폰트 */
         @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-
+        /* 카테고리 아이콘폰트 */
         @import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap');
+
+        :root {
+            --main-color: rgb(245, 188, 0);
+            --sub-color: #6D955B;
+            --main-width: 1200px;
+            --font-black-color: rgb(61, 61, 61);
+        }
 
         * {
             margin: 0;
@@ -22,25 +30,34 @@
 
         body {
             font-family: 'Noto Sans KR', sans-serif;
+            padding-top: 80px;
+            /* 상단 네비메뉴의 높이와 같음 */
         }
+
+
+        
+
+        /* ------------------------네비메뉴 스타일 --------------------------*/
 
         header {
             width: 100%;
+            height: 80px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 100;
+            background-color: white;
             box-shadow: 0 0 2px rgb(175, 175, 175);
         }
 
         nav {
-            margin: 0 auto;
             width: 100%;
-            height: 80px;
-            max-width: 1100px;
+            height: 100%;
+            max-width: var(--main-width);
+            margin: 0 auto;
             display: flex;
             align-items: center;
             justify-content: space-between;
-        }
-
-        nav>div {
-            padding: 24px
         }
 
         .logo {
@@ -51,64 +68,76 @@
         }
 
         .logo p {
-            font-weight: bold;
-            color: rgb(245, 188, 0);
+            color: var(--main-color);
             padding: 2px;
-            font-size: 42px;
+            font-size: 36px;
+            font-weight: bold;
             letter-spacing: 0.08em;
             font-family: 'Bebas Neue', sans-serif;
             cursor: pointer;
         }
 
         .logo img {
-            width: 24px;
+            width: 21px;
             margin-top: -5px;
         }
 
-        header ul {
+        .menu ul {
             list-style: none;
             display: flex;
         }
 
-        header li {
+        .menu li {
             padding: 10px;
             margin: 8px;
-            cursor: pointer;
             font-weight: bold;
-            font-size: 20px;
-            color: rgb(61, 61, 61);
+            font-size: 18px;
+            color: rgb(71, 71, 71);
+            cursor: pointer;
         }
-
+        .search{
+            width: 260px;
+            height: 36px;
+            /* background-color: rgb(241, 241, 241); */
+            border: 1px solid rgb(201, 201, 201);
+            padding: 3px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 30px;
+        }
+        .search p{
+            width: 12%;
+            text-align: center;
+            color:rgb(156, 156, 156);
+        }
+        .search input{
+            width: 88%;
+            height: 100%;
+            border: 0;
+            outline: 0;
+            background-color: transparent;
+        }
         .sign {
             height: 100%;
             display: flex;
             align-items: center;
         }
 
-        .sign p {
-            padding: 0 14px;
-            font-size: 20px;
-            color: grey;
-            cursor: pointer;
-        }
-
-        header a {
-            text-decoration: none;
+        .sign a{
             padding: 5px 8px;
+            font-size: 16px;
+            text-decoration: none;
             color: grey;
-            font-size: 17px;
         }
 
-        /*-----------------------카테고리------------------------*/
+        /*---------------------------카테고리 스타일--------------------------*/
+
         .category {
             width: 100%;
-        }
-
-        .category-items {
-            margin: 50px auto;
-            width: 100%;
             height: 120px;
-            max-width: 900px;
+            max-width: 1200px; 
+            margin: 40px auto;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -119,13 +148,13 @@
             text-align: center;
         }
 
-        .category-items div img {
+        .category-item img {
             height: 80%;
         }
 
-        .category-items div p {
+        .category-item p {
             height: 20%;
-            color: rgb(102, 102, 102);
+            color: rgb(100, 100, 100);
             margin-top: -4px;
             font-size: 15px;
             font-weight: bold;
@@ -133,113 +162,13 @@
 
         }
 
-        /*-----------------------컨텐츠---------------------------*/
 
-        .content {
-            width: 100%;
-        }
+        /* --------------------------미디어쿼리시작 -------------------------------*/
 
-        .new-content {
-            width: 100%;
-            max-width: 1100px;
-            margin: 70px auto;            
-        }
-        .content-title{
-            width: 150px;
-            height: 40px;
-            background-color: rgb(255, 243, 190);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-top-left-radius: 16px;
-            border-top-right-radius: 16px;
-        }
-        .content-title p{
-            padding: 16px;
-            font-size: 17px;
-            font-weight: 500;
-            color: rgb(92, 92, 92);
-            display: inline-block;
-        }
-        .content-items{
-            display:flex;
-            align-items: center;
-            justify-content: space-around;
-            padding:20px;
-            background-color: rgb(248, 248, 248);
-        }
-        .item {
-            width: 244px;
-            height: 380px;
-            background-color: white;
-            border-radius: 5px;
-            overflow: hidden;
-        }
-        .item-img{
-            width: 100%;
-            height: 65%;
-        }
-
-        .item-img img{
-            width: 100%;
-            height: 100%;
-            background-repeat: no-repeat;
-            background-size: cover;
-            
-        }
-        .item-text{
-            width: 100%;
-            height: 35%;
-            padding:8px;
-        }
-        .item-text p{
-            font-weight: bold;
-            color: rgb(54, 54, 54);
-        }
-        
-
-
-
-
-
-
-
-        .content2 {
-            width: 100%;
-        }
-
-        .new-content2 {
-            width: 100%;
-            max-width: 1100px;
-            margin: 70px auto;            
-        }
-        .content-title2{
-            width: 150px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-        }
-        .content-title2 p{
-            padding: 5px;
-            font-size: 17px;
-            font-weight: 500;
-            color: rgb(92, 92, 92);
-            display: inline-block;
-        }
-        .content-items2{
-            display:flex;
-            align-items: center;
-            justify-content: space-around;
-            padding:20px;
-        }
-        
-
-
-
-
-        @media all and (max-width: 1200px) {
+        @media all and (max-width: 1279px) {
             nav {
-                max-width: 900px;
+                width: 100%;
+                max-width: 1000px;
             }
 
             .logo p {
@@ -257,13 +186,13 @@
                 margin-top: -5px;
             }
 
-            header li {
+            .menu li {
                 padding: 5px;
                 margin: 6px;
-                font-size: 18px;
+                font-size: 17px;
             }
 
-            header a {
+            .menu a {
                 padding: 4px;
                 font-size: 14px;
             }
@@ -271,13 +200,29 @@
 
 
         @media all and (max-width: 768px) {
+            header{
+                position: none;
+            }
             nav {
-                height: 70px;
-                max-width: 700px;
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+                max-width: 100%;
+                background-color: blue;
             }
 
-            nav>div {
+            /* nav>div {
                 padding: 20px
+            } */
+
+            .menu ul{
+                width: 100%;
+                flex-direction: column;
+                align-items: center;
+            }
+            .menu li{
+                width: 100%;
+                align-items: center;
             }
 
             .logo {
@@ -323,7 +268,11 @@
         }
 
         @media all and (max-width: 576px) {
+            header{
+                position: none;
+            }
             nav {
+                background-color: gold;
                 margin: 0 auto;
                 width: 100%;
                 height: 65px;
@@ -333,6 +282,7 @@
                 justify-content: space-between;
 
             }
+            
 
             .category-items {
                 margin: 30px auto;
@@ -354,6 +304,9 @@
 </head>
 
 <body>
+
+    <!------------------------- 네비메뉴시작 -------------------------->
+
     <header>
         <nav>
             <div class="logo">
@@ -363,88 +316,58 @@
             <div class="menu">
                 <ul>
                     <li>카테고리</li>
-                    <li>프로젝트</li>
                     <li>운송회사</li>
                     <li>커뮤니티</li>
                 </ul>
             </div>
-            <div class="sign">
+            <div class="search">
                 <p><i class="fa-solid fa-magnifying-glass"></i></p>
+                <input type="text">
+            </div>
+            <div class="sign">
                 <a href="">로그인</a>
                 <a href="">회원가입</a>
             </div>
         </nav>
     </header>
+
+
+
+
+    <!------------------------- 카테고리 시작 -------------------------->
+
     <div class="category">
-        <div class="category-items">
-            <div class="category-item stage">
-                <img src="./images/7.png" alt="">
-                <p>방송∙무대</p>
-            </div>
-            <div class="category-item car">
-                <img src="./images/4.png" alt="">
-                <p>자동차</p>
-            </div>
-            <div class="category-item restaurant">
-                <img src="./images/6.png" alt="">
-                <p>상업용가전</p>
-            </div>
-            <div class="category-item restaurant">
-                <img src="./images/9.png" alt="">
-                <p>오피스</p>
-            </div>
-            <div class="category-item restaurant">
-                <img src="./images/10.png" alt="">
-                <p>악기</p>
-            </div>
-            <div class="category-item restaurant">
-                <img src="./images/12.png" alt="">
-                <p>기타장비</p>
-            </div>
-
+        <div class="category-item stage">
+            <img src="./images/7.png" alt="">
+            <p>방송∙무대</p>
+        </div>
+        <div class="category-item car">
+            <img src="./images/4.png" alt="">
+            <p>자동차</p>
+        </div>
+        <div class="category-item restaurant">
+            <img src="./images/6.png" alt="">
+            <p>상업용가전</p>
+        </div>
+        <div class="category-item office">
+            <img src="./images/9.png" alt="">
+            <p>IT∙오피스</p>
+        </div>
+        <div class="category-item instrument">
+            <img src="./images/10.png" alt="">
+            <p>악기</p>
+        </div>
+        <div class="category-item etc">
+            <img src="./images/8.png" alt="">
+            <p>현장장비</p>
+        </div>
+        <div class="category-item etc">
+            <img src="./images/99.png" alt="">
+            <p>기타장비</p>
         </div>
     </div>
 
-    <div class="content">
-        <div class="new-content">
-            <div class="content-title">
-                <p>New Products</p>
-            </div>
-            <div class="content-items">
-                <div class="item">
-                    <div class="item-img">
-                        <img src="./images/fridge.jpg" alt="">
-                    </div>
-                    <div class="item-text">
-                        <p>우리 냉장고</p>
-                    </div>
-                </div>
-                <div class="item"></div>
-                <div class="item"></div>
-                <div class="item"></div>
-            </div>
-        </div>
-    </div>
-    <div class="content2">
-        <div class="new-content2">
-            <div class="content-title2">
-                <p>New Products</p>
-            </div>
-            <div class="content-items2">
-                <div class="item">
-                    <div class="item-img">
-                        <img src="./images/fridge.jpg" alt="">
-                    </div>
-                    <div class="item-text">
-                        <p>우리 냉장고</p>
-                    </div>
-                </div>
-                <div class="item"></div>
-                <div class="item"></div>
-                <div class="item"></div>
-            </div>
-        </div>
-    </div>
+
 
 </body>
 
